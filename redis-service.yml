@@ -1,0 +1,22 @@
+dockersamples/examplevotingapp_worker
+---
+apiVersion: v1
+kind: service
+metadata:
+  name: redis-service
+  labels:
+    author: naveen
+    type: webserver
+spec:
+ type: ClusterIP
+ selector:
+   author: naveen
+   name: redis-pod
+   ports:
+     - targetPort: 6379
+       port: 6379
+
+
+
+...
+
